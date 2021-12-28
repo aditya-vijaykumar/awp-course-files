@@ -3,7 +3,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.get('/', function(req, res) {
-   res.sendfile('index1.html');
+   res.sendfile('basic_socketio_app.html');
 });
 
 //Whenever someone connects this gets executed

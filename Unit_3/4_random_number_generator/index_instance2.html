@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<script src="https://unpkg.com/vue"> 
+	</script> 
+</head> 
+
+<body> 
+	<div style="text-align: center;" id="home"> 
+
+		<!-- Rendering data to DOM -->
+		<h1 style="color: green;"> 
+			{{title}} 
+		</h1> 
+		<h1>Enter first name : 
+			<input type="text" id="firstname"> 
+		</h1> 
+		<h1>Enter last name : 
+			<input type="text" id="lastname"> 
+		</h1> 
+		<button @click="fullname()">Click</button> 
+		<h2 id="full_name"></h2> 
+	</div> 
+</body> 
+
+<script type="text/javascript"> 
+	// Creating Vue Instance 
+	var app = new Vue({ 
+		// Setting id of DOM in parameter 
+		el: '#home', 
+		// Passing datas 
+		data: { 
+			title: "Welcome Students for AWP Class", 
+		}, 
+		methods: { 
+			fullname: function () { 
+				// Getting values from inputs 
+				var first_name = document 
+					.getElementById("firstname").value 
+
+				var last_name = document 
+					.getElementById("lastname").value 
+
+				// Setting text in element 
+				document.getElementById("full_name") 
+					.innerHTML = "Hi, " + first_name 
+					+ " " + last_name +" welcome to AWP Class from 11:55 am to 12:55 pm"
+			} 
+		} 
+	}); 
+</script> 
+
+</html> 

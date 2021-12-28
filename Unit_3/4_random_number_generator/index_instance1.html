@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<script src="https://unpkg.com/vue"> 
+	</script> 
+</head> 
+
+<body> 
+	<div style="text-align: center;" id="home"> 
+
+		<!-- Rendering data to DOM -->
+		<h1 style="color: red;">{{title}}</h1> 
+		<h2>Title : {{name}}</h2> 
+		<h2>Topic : {{topic}}</h2> 
+	</div> 
+
+
+	<script type="text/javascript"> 
+		// Creating Vue Instance 
+		var app = new Vue({ 
+			// Assigning id of DOM in parameter 
+			el: '#home', 
+			// Assigning values of parameters 
+			data: { 
+				title: "Welcome to NMIT", 
+				name: "AWP Course", 
+				topic: "Instances" 
+			} 
+		}); 
+	</script> 
+</body> 
+
+</html> 

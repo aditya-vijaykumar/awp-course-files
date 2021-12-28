@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index_instancecss.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    html,
+    body {
+        margin: 5px;
+        padding: 0;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <h1>Firstname : {{firstname}}</h1>
+        <h1>Lastname : {{lastname}}</h1>
+        <h1>{{mydetails()}}</h1>
+    </div>
+    <script src="index_instancejs.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                firstname: "AWP",
+                lastname: "Class",
+                address: "NMIT Bangalore"
+            },
+            methods: {
+                mydetails: function () {
+                    return "I am " + this.firstname + " " + this.lastname + " from " + this.address;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

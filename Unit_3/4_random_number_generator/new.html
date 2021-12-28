@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Vue Demo</title>
+    </head>
+
+    <body>
+        <h1>Hello! Wel Come to Vue.Js examples</h1>
+        <div id="app">
+          <p>Example of : {{ myLocalProperty }}</p>
+          <hr>
+          <button @click="buttonClicked">Click me</button>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <script>
+          const app = new Vue({
+            el: '#app',
+            data: {
+              myLocalProperty: 'Random number generator'
+            },
+            methods: {
+              buttonClicked() {
+                const newText = 'The new value is: ' + Math.floor( Math.random() * 20 );
+
+                this.myLocalProperty = newText;
+              }
+            }
+          });
+        </script>
+    </body>
+</html>
