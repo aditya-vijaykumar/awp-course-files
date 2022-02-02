@@ -1,0 +1,35 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>     
+	<<div id="app">
+   <rating-counter></rating-counter>
+   <rating-counter></rating-counter>
+   <rating-counter></rating-counter>
+</div>
+
+      <script type="text/javascript">  
+	Vue.component('rating-counter', {
+    data:function() {
+        return {
+            count: 0
+        }
+    },
+    template:   `<div>
+                    <button v-on:click="count--">Thumbs Down</button>
+                    {{ count }}
+                    <button v-on:click="count++">Thumbs Up</button>
+                </div>`
+})
+
+var app = new Vue({
+  el: '#app'
+})
+
+		
+</script>
+   </body>  
+</html>  

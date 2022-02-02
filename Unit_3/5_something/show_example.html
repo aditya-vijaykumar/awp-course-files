@@ -1,0 +1,30 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="el">
+   	 <p v-show="items.length<10&&items.length>1">Items are less than 10 items</p>	
+	</div>	
+      <script type="text/javascript">  
+		var vm = new Vue({
+    
+  		el: '#el',
+    
+    
+  		data: {
+    		items: [
+    			'hello',
+      			'world',
+    			 'foo',
+      			'bar',
+      			'baz',
+    			],
+  			},
+    
+});         
+</script>
+   </body>  
+</html>  

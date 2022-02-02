@@ -1,0 +1,33 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">
+  	<span>{{ name | capitalize}}</span>
+	</div> 
+      <script type="text/javascript">  
+	new Vue({
+    el: '#app',
+
+    data: {
+        name: 'WELCOME TO AWP CLASS'
+    },
+
+    filters: {
+       // Filter definitions
+        capitalize (value) {
+  	
+    	value = value.toString().toLowerCase().split(' ')
+    	return value.map(function(item) {
+      	return item.charAt(0).toUpperCase() + item.slice(1)
+    	}).join(' ')
+  	
+}
+    }
+})
+   </script>
+   </body>  
+</html>  

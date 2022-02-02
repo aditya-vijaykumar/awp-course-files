@@ -1,0 +1,30 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">
+       	<div v-show>Hi! This is Vue.js Directive</div>
+    	</div>
+
+      <script type="text/javascript">  
+		Vue.config.productionTip = false
+ 		Vue.directive("show",{
+   		bind(e1,binding, vnode) {
+      		console.log(e1); 
+      		e1.style.color = "Blue";
+      		e1.style.fontSize = "40px";
+   		}
+ 		});
+ 		var vm = new Vue({ 
+   		el: '#app',
+   		data: {
+   		},
+   		methods : {
+   		},
+ 		}); 
+</script>
+   </body>  
+</html>  

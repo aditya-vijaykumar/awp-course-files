@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+<div id="app">	
+	<p>Unorderd Object = {{unorderdObj}}</p>
+	<p>Ordered Object = {{orderedObj}}</p>
+	<button @click="myFunction()">Click Me</button>
+</div>
+<script>
+ new Vue({
+el: '#app',
+  
+  data: { 
+	  unorderdObj:{"c":"Apple", "e":"Mango","b": "Banana", "a":"Grapes"},
+	  orderedObj:{}
+  },
+  
+   methods:{
+    myFunction: function () {		
+		this.orderedObj = this.sortObject(this.unorderdObj);
+    },
+	sortObject: function(o) {
+    return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
+    }
+   }
+
+});
+</script>        
+</body>
+</html>

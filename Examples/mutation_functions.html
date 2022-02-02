@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mutation Function</title>
+</head>
+<body>
+	<h1>Mutation Functions</h1>
+	<div id='app'>
+		<input v-model='newItem' type="text" name="input" placeholder='Enter text Here'>
+		<button @click="frontPush()">Unshift</button>
+		<button @click='normalPush()'>Push</button>
+		<button @click='frontPop()'>Shift</button>
+		<button @click='normalPop()'>Pop</button>
+		<br><br>
+
+		<ul>
+			<h2>List Items:</h2>
+			<li v-for='(item,index) in list'>{{index}}-{{item}}</li>
+		</ul>
+		
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				newItem: '',
+				list: []
+			},
+
+			
+
+			methods: {
+				 frontPush(){
+				if(this.newItem !== ''){
+				this.list.unshift(this.newItem);
+				this.newItem = '';
+				
+				}
+				},
+
+				normalPush(){
+					if(this.newItem !== ''){
+					this.list.push(this.newItem);
+					this.newItem = '';
+					}
+				},
+
+				normalPop(){
+					this.list.pop();
+
+					
+				},
+
+				frontPop(){
+					this.list.shift();
+
+				}
+				}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">
+       	<input type = "text" v-on:keyup.enter = "showinputvalue" 
+      	 v-bind:style = "styleobj" placeholder = "Enter Courses Names"/>
+    	<h1 v-if = "items.length>0">Language Courses Name</h1>
+    	<ul>
+       	<h2> <li v-for = "list in items">{{list}}</li> </h2> 
+    	</ul>
+      	</div>
+     	</div>
+
+      <script type="text/javascript">  
+		var vm = new Vue({
+   el: '#app',
+   data: { 
+     items:[],
+     styleobj: {
+        width: "38%",
+        padding: "15px 22px",
+        margin: "10px",
+        boxSizing: "border-box" 
+     }
+  },
+  methods : {
+     showinputvalue : function(event) {
+        this.items.push(event.target.value);
+     }
+  }, 
+ }); 
+ 
+</script>
+   </body>  
+</html>  

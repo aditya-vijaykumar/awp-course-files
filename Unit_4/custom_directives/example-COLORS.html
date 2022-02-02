@@ -1,0 +1,42 @@
+<html>
+   <head>
+      <title>VueJs Instance</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   </head>
+   <body>
+      <div id = "databinding">
+         <div v-changestyle>VueJS Directive</div>
+	 <div v-changestyle="'big'">VueJS Directive</div>
+	 <div v-changestyle="'small'">VueJS Directive</div>
+      </div>
+      <script type = "text/javascript">
+         Vue.directive("changestyle",{
+            bind(e1,binding) 
+	     {
+               	if(binding.value=='small')
+		{
+               		e1.style.color = "red"
+               		e1.style.fontSize = "30px"
+		}
+	       else if(binding.value=='big')
+		{
+               		e1.style.color = "green"
+               		e1.style.fontSize = "50px"
+		}
+	      else		
+		{
+               		e1.style.color = "yellow"
+			e1.style.fontSize = "100px"
+		}
+            }
+         });
+         var vm = new Vue({
+            el: '#databinding',
+            data: {
+            },
+            methods : {
+            },
+         });
+      </script>
+   </body>
+</html>   

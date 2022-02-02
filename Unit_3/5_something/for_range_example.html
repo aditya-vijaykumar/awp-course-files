@@ -1,0 +1,20 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">
+  	<ul>
+    	<li v-for="(n, index) in 20">{{ n }} * {{ index }} = {{ n * index }}</li>
+  	</ul>
+	</div>
+
+      <script type="text/javascript">  
+		new Vue({
+		el: '#app'
+		});
+</script>
+   </body>  
+</html>  

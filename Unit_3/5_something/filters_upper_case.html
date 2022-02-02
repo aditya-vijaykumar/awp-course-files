@@ -1,0 +1,28 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">
+  	<span>{{ name | Upper}}</span>
+	</div> 
+      <script type="text/javascript">  
+	new Vue({
+    el: '#app',
+
+    data: {
+        name: 'welcome to awp class'
+    },
+
+    filters: {
+       // Filter definitions
+        Upper(value) {
+            return value.toUpperCase();
+        }
+    }
+})
+   </script>
+   </body>  
+</html>  

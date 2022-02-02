@@ -1,0 +1,22 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">  
+            <span v-if="seen">Now you see my message</span>  
+            <span v-else=>You can't see my message </span>  
+        </div>   
+
+      <script type="text/javascript">  
+		var app = new Vue({  
+ 		 el: '#app',  
+ 		 data: {  
+  		  seen: false   
+ 		 }  
+		})     
+</script>
+   </body>  
+</html>  

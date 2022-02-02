@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filters with Buttons</title>
+</head>
+<body>
+	<h1>Filters with Buttons</h1>
+	<div id='app'>
+		<input v-model='text' type="text" name="input" placeholder='Enter text Here'>
+		<button @click="setOption('uppercase')">Uppercase</button>
+		<button @click='setOption("lowercase")'>Lowercase</button>
+		<button @click='setOption("capitalize")'>Capitalize</button>
+		<button @click='setOption("reverse")'>Reverse</button>
+		<br><br>
+
+		<span v-if="optionSelected === 'uppercase'">{{text | uppercase}}</span>
+		<span v-else-if="optionSelected === 'lowercase'">{{text | lowercase}}</span>
+		<span v-else-if="optionSelected === 'capitalize'">{{text | capitalize}}</span>
+		<span v-else-if="optionSelected === 'reverse'">{{text | reverse}}</span>
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				text: '',
+				optionSelected: ''
+			},
+
+			filters : {
+				uppercase(text){
+				return text.toUpperCase();
+				},
+
+				lowercase(text){
+					return text.toLowerCase();
+				},
+
+				capitalize (value) {
+	  			value = value.toString().toLowerCase().split(' ');
+	    		return value.map(function(item) {
+	      		return item.charAt(0).toUpperCase() + item.slice(1)
+	    		}).join(' ')
+	    		},
+
+				reverse(text){
+				 return	text.split('').reverse().join('');
+				}
+				},
+
+			methods: {
+				 setOption(option){
+					this.optionSelected = option;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

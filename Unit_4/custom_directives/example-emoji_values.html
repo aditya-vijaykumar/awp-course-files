@@ -1,0 +1,28 @@
+<html>
+   <head>
+      <title>VueJs Instance</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   </head>
+   <body>
+      <div id = "databinding">
+         <h1 v-emoji="hand">Hello</h1>
+    	<h1 v-emoji="smiling">Welcome to vue world</h1>
+      </div>
+      <script type = "text/javascript">
+         Vue.directive("emoji", {
+ 	 inserted: function(el, binding) {
+    	el.textContent += " " + binding.value;
+  	}
+	});
+         var vm = new Vue({
+            el: '#databinding',
+            data: {
+	      	smiling: "😃",
+      		hand: "👋"
+            },
+            methods : {
+            },
+         });
+      </script>
+   </body>
+</html>   

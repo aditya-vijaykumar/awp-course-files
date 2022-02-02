@@ -1,0 +1,26 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">
+  	<comp1></comp1>
+	</div>
+
+      <script type="text/javascript">  
+	Vue.component('comp1', {
+  	template: '<h1>Welcome to NMIT Bangalore!</h1>'
+	});
+
+	// create a new Vue instance and mount it to our div element above with the id of app
+	var vm = new Vue({
+  	el: '#app'
+	});
+
+
+		
+</script>
+   </body>  
+</html>  

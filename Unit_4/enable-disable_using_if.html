@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<p><input type="button" :disabled=enableDisable value="open model"></p>	
+	<button @click="myFunction()">Enable/Disable</button>
+</div>
+<script>
+ new Vue({
+el: '#app',
+  
+  data: { 
+	  enableDisable:false
+  },
+  
+   methods:{
+    myFunction: function () {		
+		if(this.enableDisable){
+			this.enableDisable = false;
+		}else{
+			this.enableDisable = true;
+		}
+    }   
+   }
+
+});
+</script>        
+</body>
+</html>

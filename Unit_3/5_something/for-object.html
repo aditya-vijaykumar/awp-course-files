@@ -1,0 +1,27 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<ul id="v-for-object" class="demo">
+  	<li v-for="value in object">
+    	{{ value }}
+  	</li>
+	</ul>
+
+      <script type="text/javascript">  
+		new Vue({
+ 		el: '#v-for-object',
+  		data: {
+    		object: {
+      		title: 'How to do lists in Vue',
+      		author: 'Jane Doe',
+      		publishedAt: '2016-04-10'
+    		}
+  		}
+		})
+</script>
+   </body>  
+</html>  

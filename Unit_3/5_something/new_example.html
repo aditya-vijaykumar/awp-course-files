@@ -1,0 +1,47 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	
+   	 <div id="app">
+        	<button @click="toggleVIfVisible">Toggle v-if</button>  <button @click="toggleVShowVisible">Toggle v-show</button>
+        	<br>	
+        	<div v-if="isVIfVisible()">
+            	if section here
+       		 </div>
+        	<div v-else="">
+            	else section here
+        	</div>
+        	<div v-show="isVShowVisible()">Show section here</div>
+      		</div>  
+
+      <script type="text/javascript">  
+		var app = new Vue({
+        el: '#app',
+        data: {
+            local:{
+                isVIfVisible:true,
+                isVShowVisible:true
+            }
+        },
+        methods: {
+            toggleVIfVisible(){
+                this.$data.local.isVIfVisible = !(this.$data.local.isVIfVisible);
+            },
+            toggleVShowVisible(){
+                this.$data.local.isVShowVisible = !(this.$data.local.isVShowVisible);
+            },
+            isVIfVisible(){
+                return this.$data.local.isVIfVisible;
+            },
+            isVShowVisible(){
+                return this.$data.local.isVShowVisible;
+            }
+        }
+        })         
+</script>
+   </body>  
+</html>  

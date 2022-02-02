@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+	<p>item 1 = {{ item1 }}</p>
+	<p>item 2 = {{ item2 }}</p>
+	<p>Concat = {{ item3 }}</p>
+
+	<button @click="myFunction()">Click Me</button>
+	</div>
+<script>
+
+new Vue({
+el: '#app',
+  
+  data: { 
+	  item1:['a', 'b', 'c'],
+	  item2:['d', 'e', 'f'],
+	  item3:[]
+  },
+  
+   methods:{
+    myFunction: function () {
+		
+		this.item3 = this.item1.concat(this.item2);
+		
+    }
+	}
+
+});
+</script> 
+
+	
+       
+</body>
+</html>

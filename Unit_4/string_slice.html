@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<div id="myId" ref="myId">{{ message }}</div>
+	<button @click="myFunction()">Click Me</button>
+</div>
+<script>
+ new Vue({
+el: '#app',
+  
+  data: { 
+	  message:"Welcome to NMIT Bangalore!"
+  },
+  
+   methods:{
+    myFunction: function () {
+		
+		this.message = this.message.slice(1, 10);
+		
+    }
+	}
+
+});
+</script>        
+</body>
+</html>

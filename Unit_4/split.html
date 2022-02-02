@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<div id="myId" ref="myId">{{ splitedStr }}</div>
+	<button @click="myFunction()">Click Me</button>
+</div>
+<script>
+ new Vue({
+el: '#app',
+  
+  data: { 
+	  str:"Welcome to NMIT Bangalore!",
+	  splitedStr: ""
+  },
+  
+   methods:{
+    myFunction: function () {
+		
+		this.splitedStr = this.str.split("e");
+		
+    }
+	}
+
+});
+</script>        
+</body>
+</html>

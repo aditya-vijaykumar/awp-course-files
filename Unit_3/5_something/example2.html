@@ -1,0 +1,32 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div class="row">
+  	<div id="app">
+    	<p v-if="show">You can see me, if condition is working!!!!
+      	<br /><span>HELLO Welcome to AWP Class</span>
+    	</p>
+    	<template v-if="show">
+      	<h1>If Condition Working</h1>
+      	<p>Class is at 11:55am</p>
+    	</template>
+    	<p v-else>Do you also see me?, else part is working now</p>
+    	<button @click="show = !show" class="button">Switch</button>
+  	</div>
+	</div>
+	
+      <script type="text/javascript">  
+		new Vue({
+  		el: '#app',
+		  data: {
+		  	show: true
+  		}  
+		});
+         
+</script>
+   </body>  
+</html>  

@@ -1,0 +1,25 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>      
+      	<div id="app">
+      	<template v-for="num in 10">
+        	<span>
+          	{{num}}
+        	</span>
+        	<span>$</span>
+      	</template>
+    	</div>
+	
+      <script type="text/javascript">  
+		new Vue({
+ 		 el: "#app",
+  		data: {}
+		});
+         
+</script>
+   </body>  
+</html>  

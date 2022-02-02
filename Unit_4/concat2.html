@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<input v-model="firstName" @change='concatFunction' placeholder="Enter First Name"><br>
+<input v-model="lastName" @change='concatFunction' placeholder="Enter Last Name"><br>
+	{{firstName}} - {{lastName}} - {{fullName}}
+</div>
+<script>
+ new Vue({
+
+el: '#app',
+  
+  data: { 
+	  firstName:"",
+	  lastName:"",
+	  fullName:""
+  },
+  
+   methods:{
+    concatFunction: function () {
+      var v = this;
+	  v.fullName = v.firstName.concat(v.lastName);
+   }
+	}
+ 
+
+});
+</script> 
+
+	
+       
+</body>
+</html>

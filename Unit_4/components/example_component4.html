@@ -1,0 +1,45 @@
+<html>  
+   <head>  
+      <title>Vue.js Template</title>  
+      <link rel="stylesheet" href="index.css">  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    </head>  
+    <body>     
+	<h1>Components example</h1> 
+      	<div id="app1">
+  	<h2>this is first instance</h2>
+	<comp2></comp2>
+	</div>
+	<div id="app2">
+  	<h2>this is second instance</h2>
+	<comp2></comp2>
+	</div>
+
+      <script type="text/javascript">  
+	Vue.component('comp2', {
+  	template: '<p>Hello everyone!, Welcome to {{name}}.<button v-on:click="changeName">Change caption</button></p>',
+	data:function(){
+	return{
+	   name:'Friday morning class'
+	 }
+	},
+	methods:{
+	   changeName:function(){
+		this.name='fourth unit of AWP-1';
+	}
+	}
+
+	});
+
+	
+	var vm = new Vue({
+  	el: '#app1'
+	});
+	var vm1 = new Vue({
+  	el: '#app2'
+	});
+
+		
+</script>
+   </body>  
+</html>  
